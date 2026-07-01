@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equinetic | Profesjonalna rehabilitacja koni</title>
+    <title>Equinetic | Profesjonalna rehabilitacja koni - Wypożyczalnia sprzętu</title>
+    <meta name="description" content="Ogólnopolska wysyłkowa wypożyczalnia sprzętu rehabilitacyjnego dla koni. Wynajmij derkę Bemer, ultradźwięki, inhalator Flexineb. Klasa premium.">
+    
+    <!-- Google Fonts dla eleganckiego wyglądu Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome dla ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -13,6 +24,8 @@
                     colors: {
                         'eq-navy': '#0f172a',
                         'eq-gold': '#d97706',
+                        'eq-gold-hover': '#b45309',
+                        'eq-light': '#f8fafc',
                     },
                     fontFamily: {
                         'sans': ['Lato', 'sans-serif'],
@@ -22,85 +35,160 @@
             }
         }
     </script>
+    
+    <style>
+        body { font-family: 'Lato', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .equipment-card:hover img { transform: scale(1.05); transition: transform 0.5s ease; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1598974357801-cbca100e65d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+<body class="bg-eq-light text-slate-800 antialiased">
 
-    <nav class="bg-eq-navy text-white p-6">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <h1 class="font-serif text-2xl font-bold tracking-wider">EQUINETIC<span class="text-eq-gold">.</span></h1>
-            <a href="#kontakt" class="bg-eq-gold hover:bg-orange-600 px-5 py-2 rounded text-sm font-bold uppercase transition">Kontakt</a>
+    <!-- NAV / HEADER -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-eq-navy/95 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-2xl font-bold tracking-wider text-white">
+                        EQUINETIC<span class="text-eq-gold">.</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#flota" class="text-slate-300 hover:text-white transition">Flota sprzętowa</a>
+                    <a href="#jak-to-dziala" class="text-slate-300 hover:text-white transition">Jak to działa</a>
+                    <a href="#kontakt" class="bg-eq-gold hover:bg-eq-gold-hover text-white px-6 py-2 rounded-sm font-semibold transition shadow-lg">
+                        Zapytaj o dostępność
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <header class="py-20 px-6 text-center bg-white">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="font-serif text-4xl md:text-6xl font-bold text-eq-navy mb-6">Profesjonalna rehabilitacja koni. Gdziekolwiek jesteś.</h2>
-            <p class="text-xl text-slate-600 mb-10">Ogólnopolska wypożyczalnia sprzętu medycznego klasy premium. Zapewnij swojemu koniowi dostęp do technologii, której ufają najlepsi fizjoterapeuci.</p>
-            <a href="#flota" class="bg-eq-navy text-white px-8 py-4 rounded font-bold hover:bg-slate-900 transition shadow-lg">Zobacz naszą flotę</a>
-        </div>
-    </header>
-
-    <section id="flota" class="py-20 px-6 max-w-5xl mx-auto">
-        <h3 class="font-serif text-3xl font-bold text-eq-navy mb-12 text-center">Nasza Flota Premium</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <div class="relative">
-                    <img src="https://placehold.co/400x300/0f172a/d97706?text=BEMER+Horse-Set" alt="Derka Bemer" class="mb-4 rounded w-full object-cover">
-                    <span class="absolute top-2 right-2 bg-white/95 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide backdrop-blur-sm">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>Dostępny
-                    </span>
-                </div>
-                <h4 class="text-xl font-bold text-eq-navy mb-2">Derka BEMER Horse-Set</h4>
-                <p class="text-slate-600 text-sm mb-4">Złoty standard w terapii PEMF. Poprawia mikrokrążenie i regenerację.</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <div class="relative">
-                    <img src="https://placehold.co/400x300/0f172a/d97706?text=Ochraniacze" alt="Ochraniacze" class="mb-4 rounded w-full object-cover">
-                    <span class="absolute top-2 right-2 bg-white/95 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide backdrop-blur-sm">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>Dostępny
-                    </span>
-                </div>
-                <h4 class="text-xl font-bold text-eq-navy mb-2">Ochraniacze Sport Innovations</h4>
-                <p class="text-slate-600 text-sm mb-4">Masaż wibracyjny i pole magnetyczne dla ścięgien.</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <div class="relative">
-                    <img src="https://placehold.co/400x300/0f172a/d97706?text=Ultradźwięki" alt="Ultradźwięki" class="mb-4 rounded w-full object-cover">
-                    <span class="absolute top-2 right-2 bg-white/95 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide backdrop-blur-sm">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>Dostępny
-                    </span>
-                </div>
-                <h4 class="text-xl font-bold text-eq-navy mb-2">Ultradźwięki ASTAR</h4>
-                <p class="text-slate-600 text-sm mb-4">Precyzyjna sonoterapia weterynaryjna.</p>
-            </div>
-            <div class="bg-white p-6 rounded shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <div class="relative">
-                    <img src="https://placehold.co/400x300/0f172a/d97706?text=Flexineb+E3" alt="Inhalator" class="mb-4 rounded w-full object-cover">
-                    <span class="absolute top-2 right-2 bg-white/95 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5 tracking-wide backdrop-blur-sm">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>Dostępny
-                    </span>
-                </div>
-                <h4 class="text-xl font-bold text-eq-navy mb-2">Inhalator Flexineb E3</h4>
-                <p class="text-slate-600 text-sm mb-4">Najcichsza terapia dróg oddechowych.</p>
+    <!-- HERO SECTION -->
+    <section class="hero-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex items-center min-h-[85vh]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="text-eq-gold font-bold tracking-widest uppercase text-sm mb-4 block">Wypożyczalnia sprzętu rehabilitacyjnego dla koni</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto">
+                Profesjonalna terapia Twojego konia. <br><span class="italic font-light text-slate-300">Gdziekolwiek jesteś.</span>
+            </h1>
+            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light">
+                Ogólnopolska, wysyłkowa wypożyczalnia sprzętu medycznego klasy premium. Zapewnij swojemu koniowi dostęp do technologii za ułamek ceny zakupu urządzenia.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#kontakt" class="bg-eq-gold hover:bg-eq-gold-hover text-white px-8 py-4 rounded-sm text-lg font-bold transition shadow-xl text-center">
+                    Wypożycz sprzęt
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="kontakt" class="py-20 px-6 bg-slate-900 text-white">
-        <div class="max-w-xl mx-auto">
-            <h3 class="font-serif text-3xl font-bold mb-8 text-center">Zapytaj o dostępność</h3>
-            <!-- Zmień URL w action na swój endpoint z Formspree -->
+    <!-- FLOTA SPRZĘTOWA -->
+    <section id="flota" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-eq-navy mb-4">Nasza Flota Premium</h2>
+                <div class="w-24 h-1 bg-eq-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Helper for availability badge -->
+                
+                <!-- Produkt 1: Bemer -->
+                <div class="equipment-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col sm:flex-row">
+                    <div class="relative sm:w-2/5 h-64 sm:h-auto overflow-hidden bg-slate-200">
+                        <img src="https://placehold.co/600x800/0f172a/d97706?text=Bemer+Horse-Set" alt="Derka Bemer Horse-Set" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emerald-600 flex items-center gap-2 border border-emerald-100">
+                            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
+                            Dostępny
+                        </div>
+                    </div>
+                    <div class="sm:w-3/5 p-8 flex flex-col justify-between">
+                        <h3 class="text-2xl font-bold text-eq-navy mb-3">Derka BEMER Horse-Set®</h3>
+                        <p class="text-slate-600 mb-4 text-sm">Złoty standard w terapii PEMF. Poprawia mikrokrążenie i wspomaga procesy gojenia.</p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-lg font-bold text-eq-navy">od 700 zł / tydzień</span>
+                            <a href="#kontakt" class="text-eq-gold font-bold text-sm uppercase tracking-wide">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produkt 2: Sport Innovations -->
+                <div class="equipment-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col sm:flex-row">
+                    <div class="relative sm:w-2/5 h-64 sm:h-auto overflow-hidden bg-slate-200">
+                        <img src="https://placehold.co/600x800/0f172a/d97706?text=Sport+Innovations" alt="Ochraniacze" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emerald-600 flex items-center gap-2 border border-emerald-100">
+                            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
+                            Dostępny
+                        </div>
+                    </div>
+                    <div class="sm:w-3/5 p-8 flex flex-col justify-between">
+                        <h3 class="text-2xl font-bold text-eq-navy mb-3">Ochraniacze Sport Innovations</h3>
+                        <p class="text-slate-600 mb-4 text-sm">PEMF z masażem wibracyjnym. Idealne przy urazach ścięgien.</p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-lg font-bold text-eq-navy">od 500 zł / tydzień</span>
+                            <a href="#kontakt" class="text-eq-gold font-bold text-sm uppercase tracking-wide">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produkt 3: Astar -->
+                <div class="equipment-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col sm:flex-row">
+                    <div class="relative sm:w-2/5 h-64 sm:h-auto overflow-hidden bg-slate-200">
+                        <img src="https://placehold.co/600x800/0f172a/d97706?text=ASTAR" alt="Ultradźwięki" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emerald-600 flex items-center gap-2 border border-emerald-100">
+                            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
+                            Dostępny
+                        </div>
+                    </div>
+                    <div class="sm:w-3/5 p-8 flex flex-col justify-between">
+                        <h3 class="text-2xl font-bold text-eq-navy mb-3">Ultradźwięki ASTAR PhysioGo</h3>
+                        <p class="text-slate-600 mb-4 text-sm">Profesjonalna sonoterapia weterynaryjna.</p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-lg font-bold text-eq-navy">od 400 zł / tydzień</span>
+                            <a href="#kontakt" class="text-eq-gold font-bold text-sm uppercase tracking-wide">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produkt 4: Flexineb -->
+                <div class="equipment-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 flex flex-col sm:flex-row">
+                    <div class="relative sm:w-2/5 h-64 sm:h-auto overflow-hidden bg-slate-200">
+                        <img src="https://placehold.co/600x800/0f172a/d97706?text=Flexineb" alt="Inhalator" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-emerald-600 flex items-center gap-2 border border-emerald-100">
+                            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span></span>
+                            Dostępny
+                        </div>
+                    </div>
+                    <div class="sm:w-3/5 p-8 flex flex-col justify-between">
+                        <h3 class="text-2xl font-bold text-eq-navy mb-3">Inhalator Flexineb E3</h3>
+                        <p class="text-slate-600 mb-4 text-sm">Najcichszy, przenośny nebulizator maskowy dla koni.</p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-lg font-bold text-eq-navy">od 350 zł / tydzień</span>
+                            <a href="#kontakt" class="text-eq-gold font-bold text-sm uppercase tracking-wide">Wypożycz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER/KONTAKT -->
+    <section id="kontakt" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Złóż zapytanie o dostępność</h2>
             <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST" class="space-y-4">
-                <input type="text" name="name" placeholder="Imię i nazwisko" required class="w-full p-3 rounded bg-slate-800 border border-slate-700">
-                <input type="tel" name="phone" placeholder="Numer telefonu" required class="w-full p-3 rounded bg-slate-800 border border-slate-700">
-                <textarea name="message" placeholder="Jaki sprzęt Cię interesuje?" class="w-full p-3 rounded bg-slate-800 border border-slate-700 h-32"></textarea>
-                <button type="submit" class="w-full bg-eq-gold hover:bg-orange-600 p-4 rounded font-bold uppercase tracking-widest transition">Wyślij zapytanie</button>
+                <input type="text" name="name" placeholder="Imię i nazwisko" required class="w-full p-4 rounded bg-slate-800 border border-slate-700">
+                <input type="tel" name="phone" placeholder="Telefon" required class="w-full p-4 rounded bg-slate-800 border border-slate-700">
+                <textarea name="message" placeholder="Sprzęt, który Cię interesuje" class="w-full p-4 rounded bg-slate-800 border border-slate-700 h-32"></textarea>
+                <button type="submit" class="w-full bg-eq-gold hover:bg-eq-gold-hover p-4 rounded font-bold transition">Wyślij zapytanie</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-8 text-center text-slate-500 text-sm">
-        &copy; 2026 Equinetic.
-    </footer>
 </body>
 </html>
