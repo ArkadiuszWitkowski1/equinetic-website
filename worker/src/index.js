@@ -78,7 +78,7 @@ export default {
 
     // CORS nie zatrzyma bota, ale blokuje używanie endpointu
     // przez obce strony w przeglądarce.
-    if (origin && !ALLOWED_ORIGINS.has(origin)) {
+    if (!origin || !ALLOWED_ORIGINS.has(origin)) {
       return jsonResponse(
         { error: "Origin not allowed" },
         { status: 403 },
@@ -216,6 +216,8 @@ export default {
         method: "POST",
         headers: {
           Accept: "application/json",
+          Origin: origin,
+          Referer: `${origin}/`,
         },
         body: outgoing,
       },
