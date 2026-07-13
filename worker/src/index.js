@@ -34,31 +34,6 @@ export default {
 
     const url = new URL(request.url);
 
-// Tymczasowy endpoint do sprawdzenia bindingu rate limitera.
-// Nie wysyła niczego do Formspree.
-if (
-  request.method === "GET" &&
-  url.pathname === "/rate-limit-test"
-) {
-  const clientIp =
-    request.headers.get("CF-Connecting-IP") || "unknown";
-
-  const result =
-    await env.CONTACT_RATE_LIMITER.limit({
-      key: `test:${clientIp}`,
-    });
-
-  return jsonResponse(
-    {
-      allowed: result.success,
-      ipDetected: clientIp !== "unknown",
-    },
-    {
-      status: result.success ? 200 : 429,
-    },
-  );
-}
-
     // Endpoint kontrolny.
     if (request.method === "GET") {
       return jsonResponse({
